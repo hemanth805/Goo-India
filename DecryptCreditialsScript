@@ -1,0 +1,12 @@
+#1.Retrieve the encrypted password from $JENKINS_HOME/config.xml
+#1.Open the Jenkins Script Console
+
+#3.And Type the above Script replace the "###" with encryptedpassword
+
+
+
+
+import hudson.util.RemotingDiagnostics
+import jenkins.model.Jenkins
+
+println(hudson.util.Secret.decrypt("{###########################}"))
