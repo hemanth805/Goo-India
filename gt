@@ -1,3 +1,4 @@
 git add .
 git commit -m "Adding File $1"
-git push git@github.com:hemanth805/Goo-India.git
+git push
+#git push git@github.com:hemanth805/Goo-India.git
