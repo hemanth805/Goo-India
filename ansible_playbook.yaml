@@ -1,0 +1,25 @@
+---
+- hosts: all
+  vars:
+    http_port: 80
+    max_clients: 200
+#    remote_user: root
+  tasks:
+  - name: ensure apache is at the latest version
+    yum:
+      name: httpd
+      state: latest
+  - name: make sure apache is running
+    service:
+      name: httpd
+      state: started
+  - name: Create a login user
+    user:
+     name: ansibleuser
+     password: '$1$Ee7.fU6Z$BdGBUEkej/3PXBJOS4mCD1'
+     state: present
+     home: /home/ansibleuser
+  - name: Ansible copy file to remote server
+    copy:
+      src: ~/sample.txt
+      dest: /tmp
